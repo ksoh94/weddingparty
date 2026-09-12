@@ -377,6 +377,7 @@ body {
   font-size: 3.25rem;
   z-index: -1;
   opacity: 0.55;
+   color: #e8a6b3;
 }
 .countdown-text {
   margin-top: 35px;
