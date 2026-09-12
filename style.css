@@ -1,7 +1,7 @@
 /* ================
    🌿 모바일 청첩장
 ================ */
-/* 기본 설정 */ 
+/* 기본 설정 */
 * {
   margin: 0;
   padding: 0;
@@ -56,7 +56,7 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  background-color: #304236;
+  background-color: #2f3136;
   z-index: 10000;
   display: flex;
   justify-content: center;
@@ -79,7 +79,7 @@ body {
   position: relative;
   width: 280px;
   height: 180px;
-  background-color: #e8e2d8;
+  background-color: #f7f3ee;
   border-radius: 0 0 4px 4px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
@@ -89,7 +89,7 @@ body {
   right: 15px;
   top: 15px;
   height: 160px;
-  background: #fffdf9;
+  background: #fcf8f1;
   border-radius: 4px;
   z-index: 2;
   box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.08);
@@ -107,7 +107,7 @@ body {
   left: -1px;
   right: -1px;
   height: 120px;
-  background: #ddd5ca;
+  background: #ece6dd;
   clip-path: polygon(0 0, 50% 40%, 100% 0, 100% 100%, 0 100%);
   border-top: 1px solid #e2e8f0;
   border-radius: 0 0 4px 4px;
@@ -117,7 +117,7 @@ body {
   font-family: 'Nanum Myeongjo', serif;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #304236;
+  color: #3d4045;
   letter-spacing: 1.5px;
   opacity: 0;
   animation: textFadeIn 1.2s ease forwards 0.8s;
@@ -142,7 +142,7 @@ body {
   position: relative;
   margin-top: 35px;
   font-size: 0.9rem;
-  color: #d4af37;
+  color: #d4c2a1;
   letter-spacing: 3px;
   opacity: 0;
   animation: noticeFadeIn 1s ease forwards 1.8s, noticeBounce 2s ease-in-out infinite;
@@ -181,7 +181,7 @@ body {
 .wedding-title {
   font-size: 0.75rem;
   letter-spacing: 5px;
-  color: #8c826e;
+  color: #b8a382;
   display: inline-block;
   margin-bottom: 15px;
 }
@@ -225,7 +225,7 @@ body {
 .section-sub {
   font-size: 0.75rem;
   letter-spacing: 3.5px;
-  color: #8c826e;
+  color: #b8a382;
   margin-bottom: 12px;
 }
 .section-title {
@@ -248,7 +248,7 @@ body {
 }
 .dday-title {
   font-size: 0.85rem;
-  color: #8c826e;
+  color: #b8a382;
   letter-spacing: 1px;
   margin-bottom: 12px;
 }
