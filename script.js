@@ -1,8 +1,8 @@
-const WEDDING_YEAR = 2027;
-const WEDDING_MONTH = 1; // 1월
-const WEDDING_DAY = 1;
+const WEDDING_YEAR = 2026;
+const WEDDING_MONTH = 12; // 1월
+const WEDDING_DAY = 19;
 
-const WEDDING_HOUR = 12;
+const WEDDING_HOUR = 10;
 const WEDDING_MINUTE = 0;
 const WEDDING_DATE = new Date(
   WEDDING_YEAR,
@@ -162,8 +162,8 @@ function renderKakaoMap() {
   if (kakaoMapRendered) return;
   if (typeof daum === "undefined" || !daum.roughmap || !daum.roughmap.Lander) return;
   new daum.roughmap.Lander({
-    timestamp: "1781420580863",
-    key: "2qxf2rzqqciv",
+    timestamp: "1789179017253",
+    key: "2iqyuomfhie8",
     mapWidth: "100%",
     mapHeight: "280"
   }).render();
