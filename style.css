@@ -11,7 +11,7 @@ html,
 body {
   width: 100%;
   min-height: 100%;
-  background: #2f3136;
+  background-color: #304236;
   color: #e2e8f0;
   font-family: 'Noto Sans KR', -apple-system, sans-serif;
   line-height: 1.6;
@@ -56,7 +56,7 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  background-color: #2f3136;
+  background-color: #304236;
   z-index: 10000;
   display: flex;
   justify-content: center;
@@ -79,7 +79,7 @@ body {
   position: relative;
   width: 280px;
   height: 180px;
-  background-color: #f7f3ee;
+  background-color: #e8e2d8;
   border-radius: 0 0 4px 4px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
@@ -89,7 +89,7 @@ body {
   right: 15px;
   top: 15px;
   height: 160px;
-  background: #fcf8f1;
+  background: #fffdf9;
   border-radius: 4px;
   z-index: 2;
   box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.08);
@@ -107,7 +107,7 @@ body {
   left: -1px;
   right: -1px;
   height: 120px;
-  background: #ece6dd;
+  background: #ddd5ca;
   clip-path: polygon(0 0, 50% 40%, 100% 0, 100% 100%, 0 100%);
   border-top: 1px solid #e2e8f0;
   border-radius: 0 0 4px 4px;
@@ -117,7 +117,7 @@ body {
   font-family: 'Nanum Myeongjo', serif;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #3d4045;
+  color: #304236;
   letter-spacing: 1.5px;
   opacity: 0;
   animation: textFadeIn 1.2s ease forwards 0.8s;
@@ -142,7 +142,7 @@ body {
   position: relative;
   margin-top: 35px;
   font-size: 0.9rem;
-  color: #d4c2a1;
+  color: #d4af37;
   letter-spacing: 3px;
   opacity: 0;
   animation: noticeFadeIn 1s ease forwards 1.8s, noticeBounce 2s ease-in-out infinite;
@@ -181,7 +181,7 @@ body {
 .wedding-title {
   font-size: 0.75rem;
   letter-spacing: 5px;
-  color: #b8a382;
+  color: #8c826e;
   display: inline-block;
   margin-bottom: 15px;
 }
@@ -225,7 +225,7 @@ body {
 .section-sub {
   font-size: 0.75rem;
   letter-spacing: 3.5px;
-  color: #b8a382;
+  color: #8c826e;
   margin-bottom: 12px;
 }
 .section-title {
@@ -248,7 +248,7 @@ body {
 }
 .dday-title {
   font-size: 0.85rem;
-  color: #b8a382;
+  color: #8c826e;
   letter-spacing: 1px;
   margin-bottom: 12px;
 }
@@ -363,8 +363,8 @@ body {
 }
 .days .wedding-day {
   position: relative;
-  color: #8a6660;
-  font-weight: 700;
+  color: #1a2321;
+  font-weight: bold;
   background-color: transparent;
   z-index: 1;
 }
@@ -376,8 +376,7 @@ body {
   transform: translate(-50%, -50%);
   font-size: 3.25rem;
   z-index: -1;
-  color: #d4c2a1;
-  opacity: 0.45;
+  opacity: 0.55;
 }
 .countdown-text {
   margin-top: 35px;
@@ -469,24 +468,6 @@ body {
   color: #1a2321;
   margin-bottom: 8px;
 }
-.transport-info {
-  border-top: 1px solid #e8e5dd;
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  font-size: 0.85rem;
-  color: #4a4740;
-}
-.transport-info b {
-  color: #1a2321;
-  display: inline-block;
-  width: 50px;
-}
-.transport-indent {
-  display: inline-block;
-  padding-left: 54px;
-}
 .map-buttons {
   display: flex;
   width: 100%;
@@ -496,9 +477,16 @@ body {
 .map-btn {
   flex: 1;
   padding: 12px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
   font-size: 0.8rem;
   font-weight: 500;
   text-decoration: none;
+
   border-radius: 4px;
   color: #ffffff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -512,6 +500,59 @@ body {
 }
 .map-btn.tmap {
   background-color: #222222;
+}
+.transport-info {
+  width: 100%;
+  border-top: 1px solid #e8e5dd;
+  padding-top: 22px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  font-size: 0.85rem;
+  color: #4a4740;
+}
+
+.transport-item {
+  width: 100%;
+}
+
+.transport-title {
+  width: 100%;
+  margin-bottom: 10px;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a2321;
+}
+
+.transport-description {
+  width: 100%;
+  line-height: 1.75;
+
+  /* 한글이 이상하게 한 글자씩 잘리는 것을 방지 */
+  word-break: keep-all;
+
+  /* 주소나 긴 문자열이 화면 밖으로 나가는 것을 방지 */
+  overflow-wrap: break-word;
+}
+
+.transport-description p {
+  margin: 0;
+}
+
+.transport-description p + p {
+  margin-top: 3px;
+}
+
+.transport-description strong {
+  color: #1a2321;
+  font-weight: 500;
+}
+
+.transport-route {
+  margin-top: 12px !important;
 }
 /* =================
    9. 마음 전하실 곳
@@ -598,8 +639,8 @@ body {
 .wedding-footer {
   width: 100%;
   display: block;
-  background-color: #2b2d31;
-  color: #f3ede5;
+  background-color: #1a2321;
+  color: #a19c91;
   font-size: 0.8rem;
   letter-spacing: 1px;
   text-align: center;
