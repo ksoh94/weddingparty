@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>신랑이름 • 신부이름 결혼합니다</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="신랑이름 ♡ 신부이름 결혼합니다">
+  <meta property="og:description" content="2027년 1월 1일 오후 12시 00분 결혼식에 초대합니다.">
+  <meta property="og:image" content="images/kakao-thumb.jpg">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="intro-overlay" onclick="openEnvelope()">
+    <div class="envelope-wrapper">
+      <div class="envelope">
+        <div class="letter-sheet">
+          <p class="envelope-name">신랑이름 <b>•</b> 신부이름</p>
+          <p class="envelope-date">2027. 01. 01</p>
+          <p class="envelope-sub">결혼합니다</p>
+        </div>
+      </div>
+      <p class="click-notice">TAP TO OPEN</p>
+    </div>
+  </div>
+  <div id="main-content">
+    <div id="top-sticky-bar">
+      <audio id="bgm" loop>
+        <source src="music/bgm.mp3" type="audio/mp3">
+      </audio>
+      <button id="bgm-btn" onclick="toggleBgm()">🎵 Music Off</button>
+    </div>
+    <section class="main-cover">
+      <div class="cover-text">
+        <span class="wedding-title">THE WEDDING DAY</span>
+        <h1 class="main-names">신랑이름 · 신부이름</h1>
+        <p class="main-date-place">
+          2027. 01. 01 토요일 오후 12시 00분<br>
+          식장이름 | 홀이름
+        </p>
+      </div>
+      <div class="main-photo-area">
+        <img src="images/main.jpg" alt="메인 웨딩 사진" onerror="this.style.display='none';">
+      </div>
+    </section>
+    <section class="countdown-timer-section">
+      <div class="dday-title">신랑이름와 신부이름의 결혼식까지</div>
+      <div id="dday-counter" class="dday-badge">D-DAY 계산중...</div>
+      <div class="timer-container">
+        <div class="time-box"><span id="timer-days">00</span><label>DAYS</label></div>
+        <div class="time-divider">:</div>
+        <div class="time-box"><span id="timer-hours">00</span><label>HOURS</label></div>
+        <div class="time-divider">:</div>
+        <div class="time-box"><span id="timer-min">00</span><label>MIN</label></div>
+        <div class="time-divider">:</div>
+        <div class="time-box"><span id="timer-sec">00</span><label>SEC</label></div>
+      </div>
+    </section>
+    <section class="content-section invitation-section">
+      <span class="section-sub">INVITATION</span>
+      <h2 class="section-title">소중한 분들을 초대합니다</h2>
+      <div class="flower-deco">-</div>
+      <p class="invitation-text">
+        서로 다른 길을 걸어온 두 사람이<br>
+        이제 같은 방향을 바라보며<br>
+        평생을 함께하고자 합니다.<br><br>
+        저희 두 사람이 하나가 되는 뜻깊은 날,<br>
+        귀한 걸음 하시어 저희의 새로운 시작을<br>
+        따뜻한 마음으로 축복해 주시면 감사하겠습니다.
+      </p>
+      <div class="family-relations">
+        <p><b>신랑아버지 · 신랑어머니</b> 의 장남 <span class="name-highlight">신랑이름</span></p>
+        <p><b>신부아버지 · 신부어머니</b> 의 장녀 <span class="name-highlight">신부이름</span></p>
+      </div>
+    </section>
+   <section class="content-section calendar-section">
+  <h3 id="calendar-month" class="calendar-month"></h3>
+
+  <div class="mini-calendar">
+    <div class="calendar-grid headers">
+      <span>일</span>
+      <span>월</span>
+      <span>화</span>
+      <span>수</span>
+      <span>목</span>
+      <span>금</span>
+      <span>토</span>
+    </div>
+
+    <div id="calendar-days" class="calendar-grid days"></div>
+  </div>
+  <p class="countdown-text">신랑이름 ♡ 신부이름의 결혼식이 <b>달력에 표시된 날</b>에 진행됩니다.
+  </p>
+</section>
+
+    <section class="content-section gallery-section">
+      <span class="section-sub">GALLERY</span>
+      <h2 class="section-title">우리의 아름다운 순간</h2>
+      <p class="gallery-notice">사진을 클릭하면 크게 보실 수 있습니다.</p>
+      <div class="gallery-container">
+        <div class="gallery-item"><img src="images/photo1.jpg" alt="갤러리1" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="images/photo2.jpg" alt="갤러리2" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="images/photo3.jpg" alt="갤러리3" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="images/photo4.jpg" alt="갤러리4" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="images/photo5.jpg" alt="갤러리5" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="images/photo6.jpg" alt="갤러리6" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="images/photo7.jpg" alt="갤러리7" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="images/photo8.jpg" alt="갤러리8" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="images/photo9.jpg" alt="갤러리9" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+      </div>
+    </section>
+    <section class="content-section location-section">
+      <span class="section-sub">LOCATION</span>
+      <h2 class="section-title">오시는 길</h2>
+      <div class="map-area">
+        <div id="daumRoughmapContainer1781420580863" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+      </div>
+      <div class="location-details">
+        <h3 class="hall-name">식장이름</h3>
+        <div class="transport-info">
+          <p><b>지하철</b> 지하철 안내 문구 작성<br>
+          <span class="transport-indent">지하철 안내 문구 작성</span></p>
+          <p><b>버 스</b> 버스 안내 문구 작성 </p>
+          <p><b>주 차</b> 주차 안내 문구 작성</p>
+        </div>
+      </div>
+      <div class="map-buttons">
+        <a href="https://kako.to/com" target="_blank" class="map-btn kakao">카카오맵</a>
+        <a href="https://naver.me/com" target="_blank" class="map-btn naver">네이버지도</a>
+        <a href="https://pages.tmap.co.kr" target="_blank" class="map-btn tmap">T맵</a>
+      </div>
+    </section>
+    <section class="content-section account-section">
+      <span class="section-sub">INFORMATION</span>
+      <h2 class="section-title">마음 전하실 곳</h2>
+      <p class="account-intro">
+        참석이 어려우신 분들을 위해 비대면으로나마<br>
+        마음을 전하실 수 있도록 안내드립니다.<br>
+        보내주신 정성 소중히 간직하겠습니다.<br><br>
+        예식장 규정상 화환 반입 및 설치가<br>
+        불가한 점 양해 부탁드립니다.
+      </p>
+      <div class="accordion-container">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>신랑측 계좌번호</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="account-row">
+              <span>신랑 | 신랑이름<br><b>00은행 123-456-7890</b></span>
+              <button class="copy-btn" onclick="copyText('00은행 123-456-7890')">복사</button>
+            </div>
+            <div class="account-row">
+              <span>혼주 | 신랑아버지<br><b>00은행 987-654-3210</b></span>
+              <button class="copy-btn" onclick="copyText('00은행 987-654-3210')">복사</button>
+            </div>
+            <div class="account-row">
+              <span>혼주 | 신랑어머니<br><b>00은행 987-654-3210</b></span>
+              <button class="copy-btn" onclick="copyText('00은행 987-654-3210')">복사</button>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>신부측 계좌번호</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="account-row">
+              <span>신부 | 신부이름<br><b>00은행 111-222-33333</b></span>
+              <button class="copy-btn" onclick="copyText('00은행 111-222-33333')">복사</button>
+            </div>
+            <div class="account-row">
+              <span>혼주 | 신부아버지<br><b>00은행 444-5555-6666</b></span>
+              <button class="copy-btn" onclick="copyText('00은행 444-5555-6666')">복사</button>
+            </div>
+            <div class="account-row">
+              <span>혼주 | 신부어머니<br><b>00은행 444-5555-6666</b></span>
+              <button class="copy-btn" onclick="copyText('00은행 444-5555-6666')">복사</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="wedding-footer">
+      <p>신랑이름 ♡ 신부이름 - 2027.01.01</p>
+    </footer>
+  </div>
+  <div id="image-modal" class="modal" onclick="closeModal()">
+    <span class="modal-close" onclick="closeModal()">×</span>
+    <img class="modal-content" id="modal-img" alt="확대 이미지">
+  </div>
+  <script src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
