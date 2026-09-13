@@ -122,6 +122,10 @@ hoursEl.innerText = String(hours).padStart(2, "0");
 minEl.innerText = String(minutes).padStart(2, "0");
 secEl.innerText = String(seconds).padStart(2, "0");
 }
+/*
+=================================
+기존 이미지 확대 기능
+=================================
 function openModal(src) {
   const modal = document.getElementById("image-modal");
   const modalImg = document.getElementById("modal-img");
@@ -135,6 +139,184 @@ function closeModal() {
     modal.style.display = "none";
   }
 }
+*/
+
+/* ================================
+   갤러리 스와이프 기능
+================================ */
+
+let currentImageIndex = 0;
+
+let swipeStartX = 0;
+let swipeEndX = 0;
+
+
+/* 갤러리 이미지 목록 */
+function getGalleryImages() {
+  return Array.from(
+    document.querySelectorAll(".gallery-item img")
+  );
+}
+
+
+/* 이미지 확대 열기 */
+function openModal(src) {
+  const modal = document.getElementById("image-modal");
+  const galleryImages = getGalleryImages();
+
+  if (!modal || galleryImages.length === 0) return;
+
+  currentImageIndex = galleryImages.findIndex(function (img) {
+    return img.src === src;
+  });
+
+  if (currentImageIndex === -1) {
+    currentImageIndex = 0;
+  }
+
+  showGalleryImage();
+
+  modal.style.display = "flex";
+
+  /* 확대창이 열려 있을 때 배경 스크롤 방지 */
+  document.body.style.overflow = "hidden";
+}
+
+
+/* 현재 이미지 표시 */
+function showGalleryImage() {
+  const modalImg = document.getElementById("modal-img");
+  const counter = document.getElementById("image-counter");
+  const galleryImages = getGalleryImages();
+
+  if (!modalImg || galleryImages.length === 0) return;
+
+  modalImg.src = galleryImages[currentImageIndex].src;
+
+  if (counter) {
+    counter.innerText =
+      (currentImageIndex + 1) +
+      " / " +
+      galleryImages.length;
+  }
+}
+
+
+/* 다음 이미지 */
+function nextImage() {
+  const galleryImages = getGalleryImages();
+
+  if (galleryImages.length === 0) return;
+
+  currentImageIndex++;
+
+  if (currentImageIndex >= galleryImages.length) {
+    currentImageIndex = 0;
+  }
+
+  showGalleryImage();
+}
+
+
+/* 이전 이미지 */
+function prevImage() {
+  const galleryImages = getGalleryImages();
+
+  if (galleryImages.length === 0) return;
+
+  currentImageIndex--;
+
+  if (currentImageIndex < 0) {
+    currentImageIndex = galleryImages.length - 1;
+  }
+
+  showGalleryImage();
+}
+
+
+/* 이미지 확대 닫기 */
+function closeModal() {
+  const modal = document.getElementById("image-modal");
+
+  if (modal) {
+    modal.style.display = "none";
+  }
+
+  /* 배경 스크롤 다시 활성화 */
+  document.body.style.overflow = "";
+}
+
+
+/* ================================
+   좌우 스와이프
+================================ */
+
+document.addEventListener("pointerdown", function (event) {
+
+  const modal = document.getElementById("image-modal");
+
+  if (!modal || modal.style.display !== "flex") return;
+
+  swipeStartX = event.clientX;
+});
+
+
+document.addEventListener("pointerup", function (event) {
+
+  const modal = document.getElementById("image-modal");
+
+  if (!modal || modal.style.display !== "flex") return;
+
+  swipeEndX = event.clientX;
+
+  const distance = swipeEndX - swipeStartX;
+
+  /* 움직임이 작으면 스와이프로 처리하지 않음 */
+  if (Math.abs(distance) < 50) return;
+
+
+  /* 왼쪽으로 밀기 = 다음 사진 */
+  if (distance < 0) {
+    nextImage();
+  }
+
+
+  /* 오른쪽으로 밀기 = 이전 사진 */
+  else {
+    prevImage();
+  }
+
+});
+
+
+/* ================================
+   PC 키보드 지원
+================================ */
+
+document.addEventListener("keydown", function (event) {
+
+  const modal = document.getElementById("image-modal");
+
+  if (!modal || modal.style.display !== "flex") return;
+
+
+  if (event.key === "ArrowRight") {
+    nextImage();
+  }
+
+
+  if (event.key === "ArrowLeft") {
+    prevImage();
+  }
+
+
+  if (event.key === "Escape") {
+    closeModal();
+  }
+
+});
+
+
 function toggleAccordion(button) {
   const content = button.nextElementSibling;
   const arrow = button.querySelector(".arrow");
