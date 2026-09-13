@@ -184,14 +184,29 @@ function openModal(src) {
 
 
 /* 현재 이미지 표시 */
-function showGalleryImage() {
+function showGalleryImage(direction = "") {
   const modalImg = document.getElementById("modal-img");
   const counter = document.getElementById("image-counter");
   const galleryImages = getGalleryImages();
 
   if (!modalImg || galleryImages.length === 0) return;
 
+  // 기존 애니메이션 제거
+  modalImg.classList.remove("slide-next", "slide-prev");
+
+  // 새 이미지 표시
   modalImg.src = galleryImages[currentImageIndex].src;
+
+  // 애니메이션 다시 실행시키기
+  void modalImg.offsetWidth;
+
+  if (direction === "next") {
+    modalImg.classList.add("slide-next");
+  }
+
+  if (direction === "prev") {
+    modalImg.classList.add("slide-prev");
+  }
 
   if (counter) {
     counter.innerText =
@@ -214,7 +229,7 @@ function nextImage() {
     currentImageIndex = 0;
   }
 
-  showGalleryImage();
+  showGalleryImage("next");
 }
 
 
@@ -230,7 +245,7 @@ function prevImage() {
     currentImageIndex = galleryImages.length - 1;
   }
 
-  showGalleryImage();
+  showGalleryImage("prev");
 }
 
 
