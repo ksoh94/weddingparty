@@ -765,3 +765,51 @@ body {
     opacity: 1;
   }
 }
+
+
+
+/* ================================
+   갤러리 사진 전환 애니메이션
+================================ */
+
+.modal-content {
+  will-change: transform, opacity;
+}
+
+/* 다음 사진 */
+.modal-content.slide-next {
+  animation: gallerySlideNext 0.3s ease-out;
+}
+
+/* 이전 사진 */
+.modal-content.slide-prev {
+  animation: gallerySlidePrev 0.3s ease-out;
+}
+
+
+/* 왼쪽에서 자연스럽게 등장 */
+@keyframes gallerySlideNext {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* 오른쪽에서 자연스럽게 등장 */
+@keyframes gallerySlidePrev {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
