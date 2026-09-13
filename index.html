@@ -236,10 +236,28 @@
       <p>오경석 ♡ 박혜원 - 2026.12.19</p>
     </footer>
   </div>
+  <!--
+  ===============================
+  기존 이미지 확대 모달
+  ===============================
   <div id="image-modal" class="modal" onclick="closeModal()">
     <span class="modal-close" onclick="closeModal()">×</span>
     <img class="modal-content" id="modal-img" alt="확대 이미지">
   </div>
+  -->
+  <!-- ===========================
+     스와이프 이미지 갤러리
+  =========================== -->
+
+  <div id="image-modal" class="modal">
+  <span class="modal-close" onclick="closeModal()">×</span>
+  <img
+    class="modal-content"
+    id="modal-img"
+    alt="확대 이미지"
+  >
+
+  <div id="image-counter" class="image-counter"></div>
   <script src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
   <script src="script.js"></script>
 </body>
