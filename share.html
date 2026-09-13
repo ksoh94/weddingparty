@@ -1,63 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오경석 • 박혜원 결혼합니다</title>
+<meta property="og:type" content="website">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<meta property="og:title"
+      content="오경석 ♡ 박혜원 결혼합니다">
 
-  <title>오경석 ♡ 박혜원 결혼합니다</title>
+<meta property="og:description"
+      content="2026년 12월 19일 오전 10시, 결혼식에 초대합니다.">
 
-  <!-- =========================
-       SNS 공유 정보
-  ========================== -->
+<meta property="og:url"
+      content="https://ksoh94.github.io/weddingparty/share.html">
 
-  <meta property="og:type"
-        content="website">
+<meta property="og:image"
+      content="https://ksoh94.github.io/weddingparty/images/photo_01.jpg">
 
-  <meta property="og:title"
-        content="오경석 ♡ 박혜원 결혼합니다">
+<meta property="og:image:secure_url"
+      content="https://ksoh94.github.io/weddingparty/images/photo_01.jpg">
 
-  <meta property="og:description"
-        content="2026년 12월 19일 오전 10시, 결혼식에 초대합니다.">
+<meta property="og:image:type"
+      content="image/jpeg">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <meta property="og:url"
-        content="https://ksoh94.github.io/weddingparty/share.html">
-
-  <meta property="og:image"
-        content="https://ksoh94.github.io/weddingparty/images/photo_01.jpg">
-
-  <meta property="og:image:secure_url"
-        content="https://ksoh94.github.io/weddingparty/images/photo_01.jpg">
-
-  <meta property="og:image:type"
-        content="image/jpeg">
-
-  <!-- 기타 SNS 호환 -->
-  <meta name="twitter:card"
-        content="summary_large_image">
-
-  <meta name="twitter:title"
-        content="오경석 ♡ 박혜원 결혼합니다">
-
-  <meta name="twitter:description"
-        content="2026년 12월 19일 오전 10시, 결혼식에 초대합니다.">
-
-  <meta name="twitter:image"
-        content="https://ksoh94.github.io/weddingparty/images/photo_01.jpg">
-
-  <!-- 폰트 -->
-  <link rel="preconnect"
-        href="https://fonts.googleapis.com">
-
-  <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
-    rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet"
-        href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
+  <div id="intro-overlay" onclick="openEnvelope()">
+    <div class="envelope-wrapper">
+      <div class="envelope">
+        <div class="letter-sheet">
+          <p class="envelope-name">오경석 <b>•</b> 박혜원</p>
+          <p class="envelope-date">2026. 12. 19</p>
+          <p class="envelope-sub">결혼합니다</p>
+        </div>
+      </div>
+      <p class="click-notice">초대장을 눌러주세요</p>
+    </div>
+  </div>
+  <div id="main-content">
+    <div id="top-sticky-bar">
+      <audio id="bgm" loop>
+        <source src="music/bgm.mp3" type="audio/mp3">
+      </audio>
+      <button id="bgm-btn" onclick="toggleBgm()">🎵 Music Off</button>
+    </div>
+    <section class="main-cover">
+      <div class="cover-text">
+        <span class="wedding-title">THE WEDDING DAY</span>
+        <h1 class="main-names">오경석 · 박혜원</h1>
+        <p class="main-date-place">
+          2026. 12. 19 토요일 오전 10시 00분<br>
+          광명무역센터컨벤션 3층
+        </p>
+      </div>
+      <div class="main-photo-area">
+        <img src="images/photo_04.jpg" alt="메인 웨딩 사진" onerror="this.style.display='none';">
+      </div>
+    </section>
+    <section class="countdown-timer-section">
+      <div class="dday-title">오경석과 박혜원의 결혼식까지</div>
+      <div id="dday-counter" class="dday-badge">D-DAY 계산중...</div>
+      <div class="timer-container">
+        <div class="time-box"><span id="timer-days">00</span><label>DAYS</label></div>
+        <div class="time-divider">:</div>
+        <div class="time-box"><span id="timer-hours">00</span><label>HOURS</label></div>
+        <div class="time-divider">:</div>
+        <div class="time-box"><span id="timer-min">00</span><label>MIN</label></div>
+        <div class="time-divider">:</div>
+        <div class="time-box"><span id="timer-sec">00</span><label>SEC</label></div>
+      </div>
+    </section>
+    <section class="content-section invitation-section">
+      <span class="section-sub">INVITATION</span>
+      <h2 class="section-title">초대합니다.</h2>
+      <div class="flower-deco"> </div>
+      <p class="invitation-text">
+        매일 소소한 일상을<br>
+        같이 웃을 수 있는 사람을 만났습니다.<br><br>
+        서로의 차이를 채워주고 닮은 점에 감사해하며<br>
+        이제 두 사람이 같은 곳을 바라보고 걸어가려 합니다.<br><br>
+        서로를 향한 믿음으로<br>
+        예쁘게 살아가는 모습 보여드릴테니<br>
+        저희의 첫걸음을 함께 축하해주시면 감사하겠습니다.<br>
+      </p>
+      <div class="family-relations">
+        <p><b>오성현 · 안연녀</b> 의 장남 <span class="name-highlight">오경석</span></p>
+        <p><b>박성조 · 김은희</b> 의 장녀 <span class="name-highlight">박혜원</span></p>
+      </div>
+    </section>
+   <section class="content-section calendar-section">
+  <h3 id="calendar-month" class="calendar-month"></h3>
+
+  <div class="mini-calendar">
+    <div class="calendar-grid headers">
+      <span>일</span>
+      <span>월</span>
+      <span>화</span>
+      <span>수</span>
+      <span>목</span>
+      <span>금</span>
+      <span>토</span>
+    </div>
+
+    <div id="calendar-days" class="calendar-grid days"></div>
+  </div>
+  <p class="countdown-text">오경석 ♡ 박혜원의 결혼식이</p><p></p>
+  <p class="countdown-text"><b>2026년 12월 19일</b>에 진행됩니다.</p>
+  <p class="countdown-text"></p>
+</section>
+
+    <section class="content-section gallery-section">
+      <span class="section-sub">GALLERY</span>
+      <h2 class="section-title">우리의 아름다운 순간</h2>
+      <p class="gallery-notice">사진을 클릭하면 크게 보실 수 있습니다.</p>
+      <div class="gallery-container">
+        <div class="gallery-item"><img src="./images/photo_01.jpg" alt="갤러리1" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="./images/photo_02.jpg" alt="갤러리2" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="./images/photo_03.jpg" alt="갤러리3" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="./images/photo_04.jpg" alt="갤러리4" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="./images/photo_05.jpg" alt="갤러리5" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="./images/photo_06.jpg" alt="갤러리6" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="./images/photo_07.jpg" alt="갤러리7" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="./images/photo_08.jpg" alt="갤러리8" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="./images/photo_09.jpg" alt="갤러리9" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="./images/photo_10.jpg" alt="갤러리10" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+        <div class="gallery-item"><img src="./images/photo_11.jpg" alt="갤러리11" onclick="openModal(this.src)" onerror="this.parentNode.style.display='none';"></div>
+      </div>
+    </section>
+    <section class="content-section location-section">
+      <span class="section-sub">LOCATION</span>
+      <h2 class="section-title">오시는 길</h2>
+      <div class="map-area">
+        <div id="daumRoughmapContainer1789179017253" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+      </div>
+      <div class="map-buttons">
+        <a href="https://map.kakao.com/?q=광명무역센터컨벤션"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="map-btn kakao">카카오맵</a>
+        <a href="https://map.naver.com/p/search/광명무역센터컨벤션"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="map-btn naver">네이버지도</a>
+      </div>
+      <div class="location-details">
+        <h3 class="hall-name">광명무역센터컨벤션 3층</h3>
+        <h5 class="hall-number">02-899-3535</h5><br>
+        <h5 class="hall-error">*광명역사웨딩홀이 아닙니다*</h5><br>
+        <div class="transport-info">
+          <!-- 지하철 -->
+          <div class="transport-item">
+            <div class="transport-title">지하철</div>
+            <div class="transport-description">
+              <p class="transport-route"><strong>[1호선 광명역]</strong></p>
+              <p>5번 출구 → 도보 5분 거리</p>
+
+              <p class="transport-route"><strong>[1호선 관악역]</strong></p>
+              <p>
+                1번 출구 → 마을버스 1-1 탑승 →
+                코스트코 광명점 하차 → 도보 1분 거리
+              </p>
+            </div>
+          </div>
+              
+          <div class="transport-item">
+            <div class="transport-title">버 스</div>
+            <div class="transport-description">
+              <p class="transport-route"><strong>[KTX광명역 / 광명종합터미널 / 코스트코 광명점]</strong> 정류장 하차</p><p></p>
+              <p>간선 : 505</p><p></p>
+              <p>지선 : 5627, 5633</p><p></p>
+              <p>직행 : 3001, 3002, G9633</p><p></p>
+              <p>일반 : 3, 8-2, 12, 17, 22, 77B, 102</p><p></p>
+              <p>마을 : 1-1, 1-3, 88</p><br>
+            </div>
+          </div>
+
+          <div class="transport-item">
+            <div class="transport-title">자가용</div>
+            <div class="transport-description">
+              <p class="transport-route">네비게이션 : <strong>광명국제무역센터</strong> 입력</p>
+              <p class="transport-route"><strong>[주소]</strong></p><p></p>
+              <p>"경기 광명시 일직로 72"</p><p></p>
+              <p>혹은 "경기 광명시 일직로 515"</p>
+              <p class="transport-route"><strong>[주차 안내]</strong></p><p></p>
+              <p>건물 내 지하주차장을 이용해 주세요.</p><p></p>
+              <p>A, B, C동 구분 없이 모든 주차장을 이용하실 수 있으며,</p>
+              <p>모든 주차장은 컨벤션과 연결되어 있습니다.</p> 
+              <p>주차는 2시간 무료입니다.</p>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class="content-section account-section">
+      <span class="section-sub">INFORMATION</span>
+      <h2 class="section-title">마음 전하실 곳</h2>
+      <p class="account-intro">
+        참석이 어려우신 분들을 위해 비대면으로나마<br>
+        마음을 전하실 수 있도록 안내드립니다.<br>
+        보내주신 정성 소중히 간직하겠습니다.<br><br>
+      </p>
+      <div class="accordion-container">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>신랑측 계좌번호</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="account-row">
+              <span>신랑 | 오경석<br><b>우리은행 1002-459-508831</b></span>
+              <button class="copy-btn" onclick="copyText('우리은행 272502-04-220030')">복사</button>
+            </div>
+            <div class="account-row">
+              <span>혼주 | 오성현<br><b>새마을금고 3827-10-135271-6</b></span>
+              <button class="copy-btn" onclick="copyText('새마을금고 3827-10-135271-6')">복사</button>
+            </div>
+            <div class="account-row">
+              <span>혼주 | 안연녀<br><b>신한은행 110-458-677869</b></span>
+              <button class="copy-btn" onclick="copyText('신한은행 110-458-677869')">복사</button>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>신부측 계좌번호</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="account-row">
+              <span>신부 | 박혜원<br><b>국민은행 304102-04-155361</b></span>
+              <button class="copy-btn" onclick="copyText('국민은행 304102-04-155361')">복사</button>
+            </div>
+            <div class="account-row">
+              <span>혼주 | 박성조<br><b>신한은행 110-077-904188</b></span>
+              <button class="copy-btn" onclick="copyText('신한은행 110-077-904188')">복사</button>
+            </div>
+            <div class="account-row">
+              <span>혼주 | 김은희<br><b>신한은행 110-001-421303</b></span>
+              <button class="copy-btn" onclick="copyText('신한은행 110-001-421303')">복사</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="wedding-footer">
+      <p>오경석 ♡ 박혜원 - 2026.12.19</p>
+    </footer>
+  </div>
+  <!--
+  ===============================
+  기존 이미지 확대 모달
+  ===============================
+  <div id="image-modal" class="modal" onclick="closeModal()">
+    <span class="modal-close" onclick="closeModal()">×</span>
+    <img class="modal-content" id="modal-img" alt="확대 이미지">
+  </div>
+  -->
+  <!-- ===========================
+     스와이프 이미지 갤러리
+  =========================== -->
+
+  <div id="image-modal" class="modal">
+  <span class="modal-close" onclick="closeModal()">×</span>
+  <img
+    class="modal-content"
+    id="modal-img"
+    alt="확대 이미지"
+  >
+
+  <div id="image-counter" class="image-counter"></div>
+  <script src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
