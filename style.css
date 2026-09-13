@@ -423,6 +423,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/*
+=================================
+기존 이미지 확대 CSS
+=================================
 .modal-content {
   max-width: 90%;
   max-height: 85%;
@@ -430,6 +435,57 @@ body {
   border-radius: 8px;
   animation: zoomIn 0.3s ease;
 }
+*/
+.modal-content {
+  max-width: 90%;
+  max-height: 85%;
+
+  object-fit: contain;
+
+  border-radius: 8px;
+
+  user-select: none;
+  -webkit-user-select: none;
+
+  touch-action: none;
+
+  cursor: grab;
+
+  animation: zoomIn 0.3s ease;
+}
+
+
+/* 드래그 중 마우스 표시 */
+.modal-content:active {
+  cursor: grabbing;
+}
+
+
+/* 현재 사진 번호 */
+.image-counter {
+  position: absolute;
+
+  bottom: 25px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #ffffff;
+
+  font-size: 0.8rem;
+  font-weight: 400;
+
+  letter-spacing: 1px;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  padding: 5px 12px;
+
+  border-radius: 20px;
+
+  pointer-events: none;
+}
+
 .modal-close {
   position: absolute;
   top: 20px;
