@@ -855,3 +855,75 @@ body {
   height: auto;
   display: block;
 }
+
+/* =========================
+   축하글 / 방명록
+========================= */
+
+.guestbook-section {
+  text-align: center;
+}
+
+.guestbook-intro {
+  margin: 20px 0 28px;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: #777;
+}
+
+.guestbook-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.guestbook-form input,
+.guestbook-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ddd8cf;
+  border-radius: 5px;
+  padding: 12px 14px;
+
+  font-family: inherit;
+  font-size: 0.85rem;
+
+  background: #fff;
+  color: #333;
+
+  outline: none;
+}
+
+.guestbook-form textarea {
+  min-height: 100px;
+  resize: none;
+  line-height: 1.6;
+}
+
+.guestbook-form input:focus,
+.guestbook-form textarea:focus {
+  border-color: #aaa49a;
+}
+
+#guest-submit {
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+
+  padding: 13px;
+
+  font-family: inherit;
+  font-size: 0.85rem;
+
+  background: #4a4740;
+  color: #fff;
+
+  cursor: pointer;
+}
+
+#guestbook-list {
+  width: 100%;
+  text-align: left;
+}
