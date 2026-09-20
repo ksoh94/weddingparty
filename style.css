@@ -813,3 +813,21 @@ body {
     transform: translateX(0);
   }
 }
+
+.middle-photo-section {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.middle-photo-area {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #eceae4;
+}
+
+.middle-photo-area img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
