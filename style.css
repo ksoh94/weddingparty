@@ -944,3 +944,23 @@ body {
   font-size: 0.75rem;
   color: #999;
 }
+
+/* 축하글 한 건씩 구분 */
+.guestbook-item {
+  padding: 14px 0 18px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #e8e5dd;
+}
+
+/* 마지막 글 아래에는 구분선 제거 */
+.guestbook-item:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+/* 축하 메시지 */
+.guestbook-item p {
+  margin: 0;
+  line-height: 1.7;
+  color: #4a4740;
+}
