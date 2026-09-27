@@ -927,3 +927,20 @@ body {
   width: 100%;
   text-align: left;
 }
+
+.guestbook-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.guestbook-item-header strong {
+  font-weight: 600;
+}
+
+.guestbook-item-header span {
+  font-size: 0.75rem;
+  color: #999;
+}
